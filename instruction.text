@@ -1,0 +1,68 @@
+Project Structure and Create Modules and Components 
+
+1.Creating all Component
+(ng g c header)
+    -header
+    -banner
+    -footer
+    -page-not-found 
+2.Creating all modules with routing
+(ng g m blogpost --routing)
+
+    -blogpost
+    -cmspage
+    -admin
+    -auth
+3.Creating components and services for required modules
+(ng g c blogpost/blogpost-featured)
+    blogpost (module)
+
+    - blogpost-featured
+    - blogpost-list
+    - blogpost-detail
+    - blogpost-recent
+    - categories
+    - blogpost-service
+    - blogpost-routing-module
+
+    cmspage (module)
+
+    - page
+    - contact-form
+    - cmspage-service
+    - cmspage-routing-module
+
+4.Import all components and modules in app.module 
+5.Load all component in app.component.html
+6.To Load blogpost-featuer first export this blogpost.module
+
+7.now integrate your theme with css
+8. Create Routing, Navigation and Inner Pages
+(whatever u put in path url, u should have to put it in main url link/index page url)
+    - app.component.ts
+    - app.component.html
+    - app-routing.module.ts(create path)
+    - blogpost-routing.module-ts
+    - cmspage-routing.module-ts
+    - give-link to header-url
+    - integreate other pages
+    - no page found integration
+-----------------------------------------------------------------------------------------------
+Now fetch dynamic data...
+
+9. Create  Service and Http Client 
+Service and Http Client, Blog Listing and Featured Blog
+Service and Http Client for Blog Detail, Recent Blog and Categories
+Service and Http Client  #Static Page
+   9.1. create class under the blogpost(blogpost.ts)
+        (ng g class (className))
+        - import (HttpClientModule.Title) in app.module
+        - import services in blogpost.service
+        - try to analyze blogpost.service carefully
+            *now initialize blogpost-list,blogpost-feature component
+
+   9.2  create class under the blogpost(category.ts)
+        (ng g class (category))
+   9.3. Static pages integretion
+
+10. Create Contact Form and Send Data on Email
