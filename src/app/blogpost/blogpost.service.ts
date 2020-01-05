@@ -11,7 +11,8 @@ import { catchError } from 'rxjs/operators';
 })
 export class BlogpostService {
 
-ServerUrl = 'http://localhost/demoBlogSite/';
+// ServerUrl = 'http://localhost/demoBlogSite/';
+ServerUrl = 'http://localhost:3000/';
 errorData: {};
 
 
@@ -21,21 +22,21 @@ constructor(handler: HttpBackend) {
     this.http = new HttpClient(handler);
 }
   getBlogs(){
-    return this.http.get<Blogpost>(this.ServerUrl + 'api/blogs').pipe(catchError(this.handleError));
+    return this.http.get<Blogpost>(this.ServerUrl + 'blogs').pipe(catchError(this.handleError));
   }
   getFeaturedBlogs(){
-    return this.http.get<Blogpost>(this.ServerUrl + 'api/featured_blogs').pipe(catchError(this.handleError));
+    return this.http.get<Blogpost>(this.ServerUrl + 'featured_blogs').pipe(catchError(this.handleError));
   }
 
   getBlog(id:number){
-    return this.http.get<Blogpost>(this.ServerUrl + 'api/blog/' + id).pipe(catchError(this.handleError));
+    return this.http.get<Blogpost>(this.ServerUrl + 'blogs/' + id).pipe(catchError(this.handleError));
   }
   getRecentBlogs(){
-    return this.http.get<Blogpost>(this.ServerUrl + 'api/recent_blogs').pipe(catchError(this.handleError));
+    return this.http.get<Blogpost>(this.ServerUrl + 'recent_blogs').pipe(catchError(this.handleError));
   }
   
   getCategories(){
-    return this.http.get<Category>(this.ServerUrl + 'api/categories').pipe(catchError(this.handleError));
+    return this.http.get<Category>(this.ServerUrl + 'categories').pipe(catchError(this.handleError));
   }
   // getAboutData(){
   //   return this.http.get<About>(this.ServerUrl + 'api/about').pipe(catchError(this.handleError));
