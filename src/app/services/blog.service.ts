@@ -4,14 +4,14 @@ import { Blog } from '../models/blog';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { environment } from '../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogService {
 
-  serverUrl = environment.baseUrl;
+  serverUrl = 'http://localhost/demoBlogSite/';
 
   constructor(private http: HttpClient) { }
 
